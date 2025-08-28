@@ -1,0 +1,6 @@
+fastAPI
+Uvicorn
+requests
+pandas
+ta
+numpy
