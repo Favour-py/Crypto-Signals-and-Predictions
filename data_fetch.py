@@ -71,3 +71,17 @@ def fetch_recent_trades(symbol, limit=500):
     response = requests.get(url)
     trades = response.json()
     return trades
+
+
+import requests
+
+def get_binance_usdt_symbols():
+    url = "https://api.binance.com/api/v3/exchangeInfo"
+    response = requests.get(url)
+    data = response.json()
+
+    symbols = [
+        s['symbol'] for s in data['symbols']
+        if s['quoteAsset'] == 'USDT' and s['status'] == 'TRADING'
+    ]
+    return symbols
