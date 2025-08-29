@@ -51,7 +51,7 @@ while True:
             df = calculate_indicators(df)
             bids, asks = get_order_book(symbol)
             trades = fetch_recent_trades(symbol)
-            signal = predict_signal(df, bids, asks, trades)
+            signal = predict_signal(symbol, df, bids, asks, trades)
             print(f"{symbol}: {signal}")
         except Exception as e:
             print(f"Error with {symbol}: {e}")
